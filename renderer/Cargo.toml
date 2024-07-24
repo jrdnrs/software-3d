@@ -1,0 +1,17 @@
+[package]
+name = "renderer"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["multithreaded"]
+multithreaded = ["dep:rayon"]
+
+[dependencies]
+maths = { git = "https://github.com/jrdnrs/maths-rs.git" }
+collections = { git = "https://github.com/jrdnrs/collections-rs.git" }
+png = "0.17.10"
+tobj = "4.0.0"
+ahash = "0.8.0"
+anyhow = "1.0"
+rayon = { version = "1.10.0", optional = true }

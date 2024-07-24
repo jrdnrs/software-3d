@@ -1,0 +1,18 @@
+[package]
+name = "software-3d"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release-with-debug]
+inherits = "release"
+debug = true
+
+[workspace]
+members = ["platform", "renderer"]
+
+[dependencies]
+platform = { path = "./platform" }
+renderer = { path = "./renderer" }
+
+maths = { git  = "https://github.com/jrdnrs/maths-rs.git" }
+
