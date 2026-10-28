@@ -69,7 +69,7 @@ impl<'a> Iterator for TriangleProjector<'a> {
         }
 
         let indices = self.indices_iter.next()?;
-        let vertices = array::from_fn(|i| Vertex {
+        let vertices = array::from_fn(|i: usize| Vertex {
             position: transform_point(
                 self.instance.world_positions[indices[i]],
                 self.state.camera.view_transform(),

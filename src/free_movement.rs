@@ -31,7 +31,7 @@ impl FreeMovement {
     pub fn update(&mut self, input: &Input, camera: &mut Camera, controls_active: bool, delta_time: f32) {
         if controls_active {
             self.handle_movement(input, camera, delta_time);
-            self.handle_looking(input, camera, delta_time);
+            self.handle_looking(input, camera);
         }
 
         // apply friction
@@ -88,8 +88,8 @@ impl FreeMovement {
         self.velocity += acceleration;
     }
 
-    fn handle_looking(&mut self, input: &Input, camera: &mut Camera, delta_time: f32) {
-        let sensitivity = self.mouse_sensitivity * delta_time;
+    fn handle_looking(&mut self, input: &Input, camera: &mut Camera) {
+        let sensitivity = self.mouse_sensitivity * 0.1;
 
         let delta = input.mouse.delta();
         self.yaw -= delta.x * sensitivity;

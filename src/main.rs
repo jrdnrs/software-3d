@@ -30,7 +30,7 @@ impl Demo {
         });
         let input = Input::new();
         let renderer = Renderer::new(800, 600, 75.0);
-        let player_camera = FreeMovement::new(25.0, 50.0, 33.0, 5.0);
+        let player_camera = FreeMovement::new(33.0, 100.0, 75.0, 1.0);
 
         Self {
             window,
@@ -43,21 +43,21 @@ impl Demo {
     }
 
     pub fn init(&mut self) {
-        // let model_id = self
-        //     .renderer
-        //     .assets_mut()
-        //     .model_from_obj_path(
-        //         "Tom Nook/tomNook.obj",
-        //         true,
-        //         false,
-        //         true,
-        //     )
-        //     .unwrap();
+        let model_id = self
+            .renderer
+            .assets_mut()
+            .model_from_obj_path(
+                "C:/Users/Jordan/Desktop/assets/Spyro/Artisans Hub.obj",
+                true,
+                false,
+                true,
+            )
+            .unwrap();
 
-        // let instance_id = self
-        //     .renderer
-        //     .assets_mut()
-        //     .spawn_model_instance(model_id, &Mat4f::translate(0.0, -10.0, 15.0));
+        let instance_id = self
+            .renderer
+            .assets_mut()
+            .spawn_model_instance(model_id, &Mat4f::translate(0.0, -10.0, 15.0));
     }
 
     fn handle_mouse_grab(&mut self) {

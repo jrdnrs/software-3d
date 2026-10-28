@@ -15,8 +15,8 @@ pub use camera::Camera;
 pub use renderer::Renderer;
 pub use shapes::*;
 
-pub const THREADS: usize = 0;
-pub const RES_SCALE: f32 = 1.0 / 2.0;
+pub const THREADS: usize = 6;
+pub const RES_SCALE: f32 = 0.5;
 pub const TILE_WIDTH: usize = 8;
 pub const TILE_HEIGHT: usize = 8;
 
@@ -38,7 +38,7 @@ pub const MIP_LEVELS: usize = 3;
 pub const MIP_FACTOR: f32 = 14.0;
 /// Restricts texture dimensions to powers of two on both axes if true. This provides a performance 
 /// boost when sampling textures as we can use a bitwise AND operation to wrap texture coordinates
-pub const DIM_POW_2: bool = false;
+pub const DIM_POW_2: bool = true;
 
 /*
   Debug
